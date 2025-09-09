@@ -23,12 +23,25 @@ gh auth login
 gh auth status
 ```
 
-### Installation via NPM
+### 🍺 Homebrew Installation (Anbefalet)
+
+```bash
+# Add custom tap
+brew tap lpm/mcp
+
+# Install GitHub MCP Server
+brew install gh-mcp-server
+
+# Verificer installation
+gh-mcp-server --help
+```
+
+### 📦 NPM Global Installation
 
 ```bash
 # Klon repository
-git clone https://github.com/lpm/gh-mcp.git
-cd gh-mcp
+git clone https://github.com/TB-Warp/mcp-gh.git
+cd mcp-gh
 
 # Install og byg
 npm install
@@ -41,7 +54,7 @@ npm install -g .
 gh-mcp-server --help
 ```
 
-### Test installation
+### ✅ Test installation
 ```bash
 echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/list", "params": {}}' | gh-mcp-server
 ```
@@ -76,12 +89,31 @@ Denne MCP server leverer komplet GitHub management gennem GitHub CLI:
 
 ## 📬 Installation
 
-### 🎯 NPM Global (Anbefalet)
+### 🍺 Homebrew (Anbefalet)
+
+```bash
+# Add custom tap
+brew tap lpm/mcp
+
+# Install GitHub MCP Server
+brew install gh-mcp-server
+
+# Nu tilgængelig som: gh-mcp-server
+```
+
+**Homebrew fordele:**
+- ✅ **Automatisk dependency management** - Node.js og TypeScript installeres automatisk
+- ✅ **System integration** - Korrekt placeret i PATH
+- ✅ **Nem opdatering** med `brew upgrade gh-mcp-server`
+- ✅ **Clean uninstall** med `brew uninstall gh-mcp-server`
+- ✅ **Automatisk GitHub CLI check** - Viser besked hvis ikke installeret
+
+### 📦 NPM Global
 
 ```bash
 # Klon og install
-git clone https://github.com/lpm/gh-mcp.git
-cd gh-mcp
+git clone https://github.com/TB-Warp/mcp-gh.git
+cd mcp-gh
 npm install
 npm run build
 
@@ -95,8 +127,8 @@ npm install -g .
 
 ```bash
 # Klon og byg
-git clone https://github.com/lpm/gh-mcp.git
-cd gh-mcp
+git clone https://github.com/TB-Warp/mcp-gh.git
+cd mcp-gh
 npm install
 npm run build
 
