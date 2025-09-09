@@ -290,7 +290,7 @@ class GitHubMCPServer {
 
   private async handleRepoInfo(args: any) {
     const parsed = RepoInfoSchema.parse(args);
-    const command = `gh repo view ${parsed.owner}/${parsed.repo} --json name,description,isPrivate,url,stargazerCount,forkCount,primaryLanguage,topics,createdAt,updatedAt,pushedAt`;
+    const command = `gh repo view ${parsed.owner}/${parsed.repo} --json name,description,isPrivate,url,stargazerCount,forkCount,primaryLanguage,repositoryTopics,createdAt,updatedAt,pushedAt`;
 
     const { stdout, stderr } = await execAsync(command);
     
@@ -422,7 +422,7 @@ class GitHubMCPServer {
 
   private async handleWorkflowList(args: any) {
     const parsed = WorkflowListSchema.parse(args);
-    const command = `gh workflow list --repo ${parsed.owner}/${parsed.repo} --json id,name,state,createdAt,updatedAt`;
+    const command = `gh workflow list --repo ${parsed.owner}/${parsed.repo} --json id,name,state`;
 
     const { stdout, stderr } = await execAsync(command);
     
